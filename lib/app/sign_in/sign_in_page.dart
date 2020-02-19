@@ -3,10 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SignInPage extends StatelessWidget {
-  Future<void> _signInAnonymously(BuildContext context) async {
+  // Future<void> _signInAnonymously(BuildContext context) async {
+  //   try {
+  //     final auth = Provider.of<FirebaseAuthService>(context);
+  //     await auth.signInAnonymously();
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
+
+  Future<void> _signInWithGoogle(BuildContext context) async {
     try {
       final auth = Provider.of<FirebaseAuthService>(context);
-      await auth.signInAnonymously();
+      await auth.signInWithGoogle();
     } catch (e) {
       print(e);
     }
@@ -18,8 +27,8 @@ class SignInPage extends StatelessWidget {
       appBar: AppBar(title: Text('Sign in')),
       body: Center(
         child: RaisedButton(
-          child: Text('Sign in anonymously'),
-          onPressed: () => _signInAnonymously(context),
+          child: Text('Sign in with Google'),
+          onPressed: () => _signInWithGoogle(context),
         ),
       ),
     );

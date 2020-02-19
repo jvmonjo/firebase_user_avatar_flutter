@@ -1,4 +1,4 @@
-package com.example.firebase_user_avatar_flutter
+package com.fieldbuster.app
 
 import android.os.Bundle
 
